@@ -316,6 +316,7 @@ export default class DefaultTheme extends Service {
   /**
    * Label for global filter
    */
+  @tracked
   searchLabelMsg = 'Search:';
 
   /**
@@ -355,6 +356,7 @@ export default class DefaultTheme extends Service {
    * 2. Last row's index
    * 3. Overall rows count
    */
+  @tracked
   tableSummaryMsg = 'Show %@ - %@ of %@';
 
   /**
@@ -366,6 +368,7 @@ export default class DefaultTheme extends Service {
   /**
    * Message shown when there are not data to display in the table. It's shown inside table body in cases when initial `data` is empty or when all records are filtered out
    */
+  @tracked
   noDataToShowMsg = 'No records to show';
 
   /**
@@ -386,11 +389,13 @@ export default class DefaultTheme extends Service {
   /**
    * Label for dropdown with page numbers. Used in both numeric and simple pagination
    */
+  @tracked
   currentPageNumberMsg = 'Page:';
 
   /**
    * Label for dropdown with rows count shown in the page
    */
+  @tracked
   rowsCountMsg = 'Rows:';
 
   /**
@@ -515,6 +520,7 @@ export default class DefaultTheme extends Service {
   /**
    * CSS-classes for wrapper over "Page size"-block in the `footer` component
    */
+  @tracked
   pageSizeWrapper = '';
 
   pageSizeSelectWrapper = '';

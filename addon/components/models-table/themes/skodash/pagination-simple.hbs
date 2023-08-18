@@ -24,44 +24,42 @@
     {{#if (has-block)}}
       {{yield Pagination}}
     {{else}}
-      <div class={{@themeInstance.paginationInternalWrapper}}>
-        <div class={{@themeInstance.paginationBlock}}>
-          <this.BsButton
-            class="{{if this.goToBackEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
-            type="button"
-            disabled={{unless this.goToBackEnabled "disabled"}}
-            aria-label={{@themeInstance.goToFirstPageButtonTextMsg}}
-            {{on "click" this.gotoFirst}}>
-            <i class={{@themeInstance.navFirstIcon}}></i>
-          </this.BsButton>
-          <this.BsButton
-            class="{{if this.goToBackEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
-            type="button"
-            disabled={{unless this.goToBackEnabled "disabled"}}
-            aria-label={{@themeInstance.goToPrevPageButtonTextMsg}}
-            {{on "click" this.gotoPrev}}>
-            <i class={{@themeInstance.navPrevIcon}}></i>
-          </this.BsButton>
-          <this.BsButton
-            class="{{if this.goToForwardEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
-            type="button"
-            disabled={{unless this.goToForwardEnabled "disabled"}}
-            aria-label={{@themeInstance.goToNextPageButtonTextMsg}}
-            {{on "click" this.gotoNext}}>
-            <i class={{@themeInstance.navNextIcon}}></i>
-          </this.BsButton>
-          <this.BsButton
-            class="{{if this.goToForwardEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
-            type="button"
-            disabled={{unless this.goToForwardEnabled "disabled"}}
-            aria-label={{@themeInstance.goToLastPageButtonTextMsg}}
-            {{on "click" this.gotoLast}}>
-            <i class={{@themeInstance.navLastIcon}}></i>
-          </this.BsButton>
-        </div>
+      <div class="{{@themeInstance.paginationBlock}} pagination-nav">
+        <this.BsButton
+          class="{{if this.goToBackEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
+          type="button"
+          disabled={{unless this.goToBackEnabled "disabled"}}
+          aria-label={{@themeInstance.goToFirstPageButtonTextMsg}}
+          {{on "click" this.gotoFirst}}>
+          <FaIcon @icon="angle-double-left" />
+        </this.BsButton>
+        <this.BsButton
+          class="{{if this.goToBackEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
+          type="button"
+          disabled={{unless this.goToBackEnabled "disabled"}}
+          aria-label={{@themeInstance.goToPrevPageButtonTextMsg}}
+          {{on "click" this.gotoPrev}}>
+          <FaIcon @icon="angle-left" />
+        </this.BsButton>
+        <this.BsButton
+          class="{{if this.goToForwardEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
+          type="button"
+          disabled={{unless this.goToForwardEnabled "disabled"}}
+          aria-label={{@themeInstance.goToNextPageButtonTextMsg}}
+          {{on "click" this.gotoNext}}>
+          <FaIcon @icon="angle-right" />
+        </this.BsButton>
+        <this.BsButton
+          class="{{if this.goToForwardEnabled "enabled" "disabled"}} {{@themeInstance.buttonDefault}}"
+          type="button"
+          disabled={{unless this.goToForwardEnabled "disabled"}}
+          aria-label={{@themeInstance.goToLastPageButtonTextMsg}}
+          {{on "click" this.gotoLast}}>
+          <FaIcon @icon="angle-double-right" />
+        </this.BsButton>
       </div>
       {{#if @showCurrentPageNumberSelect}}
-        <this.BsForm class="pull-right">
+        <this.BsForm class="pull-right pagination-form">
           <div class="input-group">
             <label class="input-group-text" for={{this.inputId}}>{{@themeInstance.currentPageNumberMsg}}</label>
             <Pagination.PageNumberSelect/>&nbsp;

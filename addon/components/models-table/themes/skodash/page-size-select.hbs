@@ -1,4 +1,4 @@
-<div class="{{@themeInstance.pageSizeWrapper}}" ...attributes>
+<div class="{{@themeInstance.pageSizeWrapper}} page-size-wrapper" ...attributes>
   {{#let
     (hash
       Select=(
@@ -17,12 +17,10 @@
     {{#if (has-block)}}
       {{yield PageSizeSelect}}
     {{else}}
-      <this.BSForm class="pull-left">
-        <div class="input-group">
-          <label for={{this.inputId}} class="input-group-text">{{@themeInstance.rowsCountMsg}}</label>
-          <PageSizeSelect.Select/>
-        </div>
-      </this.BSForm>
+      <div class="input-group">
+        <label for={{this.inputId}} class="input-group-text">{{@themeInstance.rowsCountMsg}}</label>
+        <PageSizeSelect.Select/>
+      </div>
     {{/if}}
   {{/let}}
 </div>

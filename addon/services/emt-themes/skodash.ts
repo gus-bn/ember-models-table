@@ -76,6 +76,8 @@ export default class SkodashTheme extends DefaultTheme {
     return ensureSafeComponent(PaginationNumeric, this);
   }
 
+  pageSizeWrapper = 'page-size-wrapper';
+
   table =
     'table table-striped table-bordered table-condensed table-sm table-hover';
 
@@ -98,9 +100,9 @@ export default class SkodashTheme extends DefaultTheme {
 
   footerSummaryNumericPagination = 'col-4';
 
-  footerSummaryDefaultPagination = 'col-5';
+  footerSummaryDefaultPagination = 'col-sm-12 col-md-6 col-lg-5';
 
-  pageSizeWrapper = 'col-2';
+  pageSizeWrapper = '';
 
   pageSizeSelectWrapper = 'pull-right';
 
@@ -108,7 +110,7 @@ export default class SkodashTheme extends DefaultTheme {
 
   paginationWrapperNumeric = 'col-6';
 
-  paginationWrapperDefault = 'col-5';
+  paginationWrapperDefault = 'col-sm-12 col-md-6 col-lg-7';
 
   clearFilterIcon = 'fa fa-fw fa-times form-control-feedback';
 

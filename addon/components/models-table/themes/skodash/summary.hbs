@@ -6,14 +6,14 @@
       )
     }}
   {{else}}
-    <div class="input-group">
+    <div class="input-group footer-summary">
       <label class="input-group-text">{{this.summary}}</label>
       <this.BsButton
         class="clearFilters {{@themeInstance.buttonLink}}"
         disabled={{unless @anyFilterUsed "disabled"}}
         @outline={{true}}
         @onClick={{this.doClearFilters}}>
-        <i class={{@themeInstance.clearAllFiltersIcon}}></i>
+        <FaIcon @icon="times" />
         <span class="emt-sr-only">{{@themeInstance.clearAllFiltersMsg}}</span>
       </this.BsButton>
     </div>
