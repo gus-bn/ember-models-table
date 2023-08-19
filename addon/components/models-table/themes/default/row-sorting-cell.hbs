@@ -36,9 +36,11 @@
         {{@column.columnTitle}}
         {{#if @column.useSorting}}
           {{#if @column.sortAsc}}
-            <i class="{{@themeInstance.sortAscIcon}}" />
+            <FaIcon @icon="sort-asc"/>
           {{else if @column.sortDesc}}
-            <i class="{{@themeInstance.sortDescIcon}}" />
+            <FaIcon @icon="sort-desc"/>
+          {{else}}
+            <FaIcon @icon="sort"/>
           {{/if}}
         {{/if}}
       </span>

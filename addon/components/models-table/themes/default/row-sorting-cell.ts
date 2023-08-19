@@ -2,6 +2,8 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { splitPropSortDirection } from '../../../../utils/emt/split-prop-sort-direction.function';
 import { RowSortingCellSignature } from '../../../../interfaces/components/models-table/themes/default/row-sorting-cell-signature.interface';
+import { inject as service } from '@ember/service';
+import { isEmpty } from '@ember/utils';
 
 /**
  * Sort-row cell used within {@link DefaultTheme.RowSorting}.
@@ -58,6 +60,22 @@ import { RowSortingCellSignature } from '../../../../interfaces/components/model
  * ```
  */
 export default class RowSortingCell extends Component<RowSortingCellSignature> {
+  @service router!: RouterService;
+
+  constructor() {
+    super(...arguments);
+    let sortColumn = this.router?.currentRoute?.queryParams?.sort;
+    if (isEmpty(sortColumn)) return;
+
+    let column = this.args.column,
+      propertyName = column?.sortedBy || column?.propertyName;
+    if (sortColumn !== propertyName) return;
+    
+    let sortDirection = this.router?.currentRoute?.queryParams?.sortDirection ||
+      'asc';
+    column.sorting = sortDirection;
+  }
+
   get sortingIndex(): number {
     const {
       args: {
