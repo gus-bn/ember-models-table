@@ -16,7 +16,7 @@
         placeholder={{@themeInstance.searchPlaceholderMsg}}/>
         <this.BsButton
           class="clearFilterIcon {{@themeInstance.buttonLink}}"
-          disabled={{unless @globalFilterUsed "disabled"}}
+          disabled={{unless @value "disabled"}}
           @outline={{true}}
           @onClick={{this.clearGlobalFilter}}>
           <FaIcon @icon="times"/>

@@ -79,7 +79,7 @@ export default class SkodashTheme extends DefaultTheme {
   pageSizeWrapper = 'page-size-wrapper';
 
   table =
-    'table table-striped table-bordered table-condensed table-sm table-hover';
+    'table table-striped table-bordered table-condensed table-sm align-middle table-hover';
 
   globalFilterWrapper = 'pull-left';
 
@@ -118,7 +118,7 @@ export default class SkodashTheme extends DefaultTheme {
 
   sortGroupedPropertyBtn = 'btn';
 
-  tfooterInternalWrapper = 'row';
+  tfooterInternalWrapper = 'footer-wrapper';
 
   input = 'form-control';
 
